@@ -44,4 +44,4 @@ Look how cute Baby Yoda is in \@ref(fig:starwars-img)
 
 Let's also check out the article "Terminologies for reproducible research". [@barba2018terminologies].
 
-# References cited
+# References Cited
