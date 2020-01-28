@@ -7,7 +7,7 @@ output: bookdown::html_document2
 
 ## Here is some inline code `r 1 + 1`
 
-````{r, starwars-plot, fig.cap = "A ggplot of starwars stuff"}
+````{r starwars-plot, fig.cap = "A ggplot of starwars stuff"}
 library(tidyverse)
 
 starwars %>%
@@ -18,3 +18,24 @@ aes(x = height,
     y = mass) + 
   geom_point()
 ````
+
+We can see in Figure  \@ref(fig:starwars-plot)
+
+
+````{r starwars-tbl}
+starwars %>%
+  filter(species == "Human") %>%
+  select(name,
+         height,
+         mass,
+         homeworld) %>%
+  knitr::kable(caption = "A knitr knable table of star wars data")
+````
+
+
+We can see in Table \@ref(tab:starwars-tbl)
+
+
+
+
+
