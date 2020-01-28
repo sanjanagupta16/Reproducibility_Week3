@@ -35,7 +35,15 @@ starwars %>%
 
 We can see in Table \@ref(tab:starwars-tbl)
 
+````{r my-fig, fig.cap = "My non-code figure"}
 
+knitr::include_graphics("figures/my-image-file.png")
+````
+
+We can see in Figure \@ref(fig:my-fig)
+
+Blah blah [@Barba2019; 
+@Levenque2019]
 
 
 
