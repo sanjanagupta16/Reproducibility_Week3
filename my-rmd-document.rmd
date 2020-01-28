@@ -3,6 +3,8 @@ title: "My RMD Document"
 author: "Sanjana Gupta"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: bookdown::html_document2
+bibliography: my_bibliography.bib
+
 ---
 
 ## Here is some inline code `r 1 + 1`
@@ -33,17 +35,24 @@ starwars %>%
 ````
 
 
-We can see in Table \@ref(tab:starwars-tbl)
+### We can see in Table \@ref(tab:starwars-tbl)
 
-````{r my-fig, fig.cap = "My non-code figure"}
+```{r, my-fig, fig.cap="My non-code figure"}
 
 knitr::include_graphics("figures/my-image-file.png")
-````
 
-We can see in Figure \@ref(fig:my-fig)
+```
 
-Blah blah [@Barba2019; 
-@Levenque2019]
+### We can see in Figure \@ref(fig:my-fig)
 
+Blah blah [@Barba2019; @Leveque2012].
+
+Stodden et al. says blah [-@Stodden2014].
+
+@Claerbout1992 says blah.
+
+Blah blah [see [@Barba2019, pp. 33-35; also @Stodden2014, ch. 1].
+
+## References cited
 
 
