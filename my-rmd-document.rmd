@@ -1,6 +1,6 @@
 ---
 title: My Rmd document
-author: Florencia Marcaccio
+author: Sanjana Gupta
 date: "`r format(Sys.time(),'%d %B, %Y')`"
 bibliography: example.bib
 output: bookdown::html_document2
