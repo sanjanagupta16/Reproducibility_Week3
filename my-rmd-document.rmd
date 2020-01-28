@@ -1,58 +1,47 @@
 ---
-title: "My RMD Document"
-author: "Sanjana Gupta"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+title: My Rmd document
+author: Florencia Marcaccio
+date: "`r format(Sys.time(),'%d %B, %Y')`"
+bibliography: example.bib
 output: bookdown::html_document2
-bibliography: my_bibliography.bib
-
 ---
-
-## Here is some inline code `r 1 + 1`
-
-````{r starwars-plot, fig.cap = "A ggplot of starwars stuff"}
+```{r message=FALSE}
 library(tidyverse)
-
-starwars %>%
-  filter(species == "Human") %>%
-  
-ggplot() + 
-aes(x = height, 
-    y = mass) + 
-  geom_point()
-````
-
-We can see in Figure  \@ref(fig:starwars-plot)
-
-
-````{r starwars-tbl}
-starwars %>%
-  filter(species == "Human") %>%
-  select(name,
-         height,
-         mass,
-         homeworld) %>%
-  knitr::kable(caption = "A knitr knable table of star wars data")
-````
-
-
-### We can see in Table \@ref(tab:starwars-tbl)
-
-```{r, my-fig, fig.cap="My non-code figure"}
-
-knitr::include_graphics("figures/my-image-file.png")
-
 ```
 
-### We can see in Figure \@ref(fig:my-fig)
-
-Blah blah [@Barba2019; @Leveque2012].
-
-Stodden et al. says blah [-@Stodden2014].
-
-@Claerbout1992 says blah.
-
-Blah blah [see [@Barba2019, pp. 33-35; also @Stodden2014, ch. 1].
-
-## References cited
+We are using the Starwars dataset, which has `r dim(starwars)[1]` rows and `r dim(starwars)[2]` columns.
 
 
+
+
+```{r, starwars-plot, fig.cap = "A ggplot of starwars stuff"}
+starwars %>%
+  filter(species == "Human") %>%
+  ggplot()+
+  aes(x = height,
+      y = mass)+
+  geom_point()
+```
+
+We can see in Figure \@ref(fig:starwars-plot) a scatterplot of height and mass.
+
+
+
+```{r starwars-tbl}
+starwars %>%
+  filter(species == "Human") %>%
+  select(name, height, mass, homeworld) %>%
+  knitr::kable(caption="A knitr kable table of starwars data")
+```
+
+We can see in Table \@ref(tab:starwars-tbl) a subset of the data from the starwars dataset.
+
+
+```{r starwars-img, echo=FALSE, fig.cap="Starwars image"}
+knitr::include_graphics("https://www.gannett-cdn.com/presto/2019/12/27/USAT/e79b0b30-cb0d-47d5-83a5-36a814107e8d-mandalorian-108-7_013d454d.jpeg?width=660&height=275&fit=crop&format=pjpg&auto=webp")
+```
+Look how cute Baby Yoda is in \@ref(fig:starwars-img)
+
+Let's also check out the article "Terminologies for reproducible research". [@barba2018terminologies].
+
+# References cited
